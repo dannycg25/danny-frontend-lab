@@ -20,7 +20,7 @@ is-fullwidth"
           <td>{{ pais.Idioma }}</td>
           <td>
             <button class="btn btn-secondary btn-sm">Editar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
+            <button class="btn btn-danger btn-sm" v-on:click="eliminarPais(index)">Eliminar</button>
           </td>
         </tr>
       </tbody>
@@ -31,6 +31,7 @@ is-fullwidth"
 <script>
 export default {
   name: "ListaPaises", 
+
   data() {
     return {
       paises: [
@@ -41,6 +42,12 @@ export default {
         { nombre: "Alemania", continente: "Europa", Idioma: "Alemán" },
       ],
     };
+  },
+  
+  methods: {
+    eliminarPais(index){
+        this.paises.splice(index, 1);
+    }
   },
 };
 </script>
