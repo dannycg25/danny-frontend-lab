@@ -54,10 +54,8 @@ export default {
     },
 
     obtenerTareas() {
-      console.log("holaa");
       axios.get("http://localhost:5093/api/Paises").then((response) => {
       console.log(response.data);
-      console.log("holaa");
       this.paises = response.data;
       });
     },
